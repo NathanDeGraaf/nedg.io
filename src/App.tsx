@@ -1,6 +1,7 @@
+
+import Button from '@material-ui/core/Button';
 import * as React from 'react';
 import './App.css';
-
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -14,6 +15,9 @@ class App extends React.Component {
         <p className="App-intro">
           The rest is coming soon...
         </p>
+          <Button variant="contained" color="primary">
+              Hello World
+          </Button>
       </div>
     );
   }
