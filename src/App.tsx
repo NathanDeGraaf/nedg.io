@@ -3,42 +3,63 @@ import {Circle, Layer, Stage, Text} from 'react-konva';
 import DocumentTitle from 'react-document-title';
 import './App.css';
 import TopBar from './TopBar';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 
+const Home = () => {
+  const height = window.innerHeight - 100;
+  const radius = Math.min(300, height / 2);
+  const centerX = window.innerWidth / 2;
+  const centerY = height / 2;
+
+  const textX = centerX - radius + 140;
+  const textY = centerY - 15;
+
+  return (
+      <div className="App">
+        <Stage width={window.innerWidth} height={height}>
+          <Layer>
+            <Circle
+              x={centerX}
+              y={centerY}
+              radius={radius}
+              fill={"#f9ffad"}
+              stroke="black"
+            />
+            <Text
+              text="Cool stuff goes here"
+              fontSize={30}
+              align={"center"}
+              fontFamily={"Roboto"}
+              x={textX}
+              y={textY}
+            />
+          </Layer>
+        </Stage>
+      </div>
+  );
+};
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+);
 
 class App extends React.Component {
   public render() {
-    const height = window.innerHeight - 100;
-    const radius = Math.min(300, height / 2);
-    const centerX = window.innerWidth / 2;
-    const centerY = height / 2;
-
-    const textX = centerX - radius + 140;
-    const textY = centerY - 15;
-
     return (
       <DocumentTitle title={"Nathan De Graaf"}>
-        <div className="App">
-          <TopBar/>
-          <Stage width={window.innerWidth} height={height}>
-            <Layer>
-              <Circle
-                x={centerX}
-                y={centerY}
-                radius={radius}
-                fill={"#f9ffad"}
-                stroke="black"
-              />
-              <Text
-                text="Cool stuff goes here"
-                fontSize={30}
-                align={"center"}
-                fontFamily={"Roboto"}
-                x={textX}
-                y={textY}
-              />
-            </Layer>
-          </Stage>
-        </div>
+        <Router>
+          <div>
+            <TopBar/>
+            <Route exact={true} path="/" component={Home}/>
+            <Route path="/about" component={About}/>
+            <Route path="/topics" component={About}/>
+          </div>
+        </Router>
       </DocumentTitle>
     );
   }

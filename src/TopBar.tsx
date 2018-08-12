@@ -4,8 +4,11 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import './App.css';
+import {
+  Link
+} from 'react-router-dom'
 
-class Topbar extends React.Component {
+class TopBar extends React.Component {
   public render() {
     return (
       <div>
@@ -15,11 +18,21 @@ class Topbar extends React.Component {
               nedg.io
             </Typography>
             <div className={"Topbar-buttons"}>
-              <Button color="inherit" >Home</Button>
-              <Button color="inherit">Projects</Button>
-              <Button color="inherit">Photos</Button>
-              <Button color="inherit">Writing</Button>
-              <Button color="inherit">About</Button>
+              <Button color="inherit" >
+                <Link style={{textDecoration: "none", color: "white"}} to="/">Home</Link>
+              </Button>
+              <Button color="inherit">
+                <Link style={{textDecoration: "none", color: "white"}} to="/projects">Projects</Link>
+              </Button>
+              <Button color="inherit">
+                <Link style={{textDecoration: "none", color: "white"}} to="/photos">Photos</Link>
+              </Button>
+              <Button color="inherit">
+                <Link style={{textDecoration: "none", color: "white"}} to="/writing">Writing</Link>
+              </Button>
+              <Button color="inherit">
+                <Link style={{textDecoration: "none", color: "white"}} to="/about">About</Link>
+              </Button>
             </div>
           </Toolbar>
         </AppBar>
@@ -28,4 +41,4 @@ class Topbar extends React.Component {
   }
 }
 
-export default Topbar;
+export default TopBar;
