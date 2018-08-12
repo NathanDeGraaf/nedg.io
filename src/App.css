@@ -22,6 +22,19 @@
   font-size: large;
 }
 
+.Topbar-toolbar {
+  background-color: #222222;
+}
+
+.Topbar-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  /*background-color: red;*/
+  margin: 0 auto;
+  width: 50%;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

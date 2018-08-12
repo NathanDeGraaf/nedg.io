@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {Circle, Layer, Stage, Text} from 'react-konva';
 import './App.css';
+import TopBar from './TopBar';
 
 
 class App extends React.Component {
   public render() {
-    const height = window.innerHeight - 500;
-    const radius = (height - 100) / 2;
+    const height = window.innerHeight - 100;
+    const radius = Math.min(300, height / 2);
     const centerX = window.innerWidth / 2;
     const centerY = height / 2;
 
@@ -15,9 +16,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to nedg.io</h1>
-        </header>
+        <TopBar/>
         <Stage width={window.innerWidth} height={height}>
           <Layer>
             <Circle
