@@ -6,9 +6,12 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
-  (<BrowserRouter>
-    <App />
-  </BrowserRouter>),
+  (
+    <div className={"Background"}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </div>),
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();

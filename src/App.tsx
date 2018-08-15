@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
+import BasePage from "./BasePage";
 
 const Home = () => {
   const height = window.innerHeight - 100;
@@ -42,9 +43,9 @@ const Home = () => {
   );
 };
 
-const About = () => (
+const Projects = () => (
   <div>
-    <h2>About</h2>
+    <BasePage/>
   </div>
 );
 
@@ -56,8 +57,8 @@ class App extends React.Component {
           <div>
             <TopBar/>
             <Route exact={true} path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/topics" component={About}/>
+            <Route path="/projects" component={Projects}/>
+            <Route path="/topics" component={Projects}/>
           </div>
         </Router>
       </DocumentTitle>
