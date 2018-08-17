@@ -1,7 +1,8 @@
-import BaseStory from "./BaseStory";
+import './BasePage.css';
+import IBaseStory from "./BaseStory";
 
-class CircleStory extends BaseStory {
-  protected x: string = "rectangles";
+class RectangleStory extends IBaseStory {
+  protected title: string = "Compacting Rectangles";
 }
 
-export default CircleStory;
+export default RectangleStory;

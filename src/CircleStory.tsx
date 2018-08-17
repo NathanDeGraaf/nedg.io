@@ -1,7 +1,8 @@
-import BaseStory from "./BaseStory";
+import './BasePage.css';
+import IBaseStory from "./BaseStory";
 
-class CircleStory extends BaseStory {
-  protected x: string = "circle";
+class CircleStory extends IBaseStory {
+  protected title: string = "Drawing Circles";
 }
 
 export default CircleStory;

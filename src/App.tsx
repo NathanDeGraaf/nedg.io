@@ -43,12 +43,6 @@ const Home = () => {
   );
 };
 
-const Projects = () => (
-  <div>
-    <BasePage/>
-  </div>
-);
-
 class App extends React.Component {
   public render() {
     return (
@@ -57,8 +51,8 @@ class App extends React.Component {
           <div>
             <TopBar/>
             <Route exact={true} path="/" component={Home}/>
-            <Route path="/projects" component={Projects}/>
-            <Route path="/topics" component={Projects}/>
+            <Route path="/projects" component={BasePage}/>
+            <Route path="/topics" component={BasePage}/>
           </div>
         </Router>
       </DocumentTitle>

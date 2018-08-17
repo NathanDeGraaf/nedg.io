@@ -5,14 +5,15 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import BaseStory from './BaseStory'
 import {
-  BrowserRouter as Router,
-  Route
+  // BrowserRouter as Router,
+  Route,
+  RouteComponentProps
 } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import CircleStory from "./CircleStory";
 import RectangleStory from "./RectangleStory";
+import ProjectsStory from "./ProjectsStory";
 
 const Title = (x: string) => (
   <div>
@@ -23,49 +24,43 @@ const Title = (x: string) => (
     </Paper>
   </div>
 );
-const MenuItem= (name: string, route: string) => (
+
+interface IMenuItemProps {
+  name: string,
+  route: string
+}
+const MenuItem: React.SFC<IMenuItemProps> = (props) => (
   <ListItem button={true} divider={true}>
-    <Link style={{textDecoration: "none", color: "white"}} to={route}><ListItemText primary={name}/></Link>
+    <Link style={{textDecoration: "none", color: "white"}} to={props.route}><ListItemText primary={props.name}/></Link>
   </ListItem>
 );
 
-const Menu = () => (
+interface IMenuProps extends RouteComponentProps<any> {}
+const Menu: React.SFC<IMenuProps> = (props) => (
   <div>
     <Paper className="Page-menu" elevation={0} square={true}>
       <List style={{padding: 0}} component="nav">
-        {MenuItem("Inbox", "/projects/inbox")}
-        {MenuItem("Asdf", "/projects/asdf")}
-        {MenuItem("Circles", "/projects/circle")}
-        {MenuItem("Rectangles", "/projects/rect")}
+        {MenuItem({name: "Circles", route: `${props.match.url}/circle`})}
+        {MenuItem({name: "Rectangles", route: `${props.match.url}/rect`})}
       </List>
     </Paper>
   </div>
 );
 
-
-class BasePage extends React.Component {
-  public render() {
-    return (
+interface IBaseProps extends RouteComponentProps<any> {}
+const BasePage: React.SFC<IBaseProps> = (props) =>
       <div>
         <Paper className="Page" elevation={2}>
           {Title("Projects")}
           <div className={"Page-body"}>
-            <Menu/>
-
-            <Router>
-              <div className={"Page-story"}>
-                <Route path="/projects/circle" component={CircleStory}/>
-                <Route path="/projects/rect" component={RectangleStory}/>
-                <Route path="/projects/3" component={BaseStory}/>
-              </div>
-            </Router>
-
-
+            {Menu({...props})}
+            <div className={"Page-story"}>
+              <Route path={`${props.match.url}/circle`} component={CircleStory}/>
+              <Route path={`${props.match.url}/rect`} component={RectangleStory}/>
+              <Route exact={true} path={`${props.match.url}`} component={ProjectsStory}/>
+            </div>
           </div>
         </Paper>
-      </div>
-    );
-  }
-}
+      </div>;
 
 export default BasePage;
