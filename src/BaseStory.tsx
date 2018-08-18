@@ -2,9 +2,17 @@ import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
 import './BaseStory.css';
 
+export function tx(text: string): JSX.Element {
+  return (
+  <Typography className="BaseStory-tx" component="h1">
+    {text}
+  </Typography>
+  )
+}
+
 abstract class BaseStory extends React.Component<{}, {}> {
   protected abstract title: string;
-  protected body: string;
+  protected body: any;
   public render() {
     return (
       <div style={{
@@ -16,11 +24,9 @@ abstract class BaseStory extends React.Component<{}, {}> {
             {this.title}
           </div>
         </Typography>
-        <Typography component="h1">
-          <div className="BaseStory-body">
-            {this.body}
-          </div>
-        </Typography>
+        <div className="BaseStory-body">
+          {this.body}
+        </div>
       </div>
     )
   }

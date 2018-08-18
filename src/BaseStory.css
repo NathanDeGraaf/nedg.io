@@ -5,5 +5,8 @@
 }
 
 .BaseStory-body {
-  padding: 10px;
+}
+
+.BaseStory-tx {
+  padding: 10px 15px 10px 15px;
 }
