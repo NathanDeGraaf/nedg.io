@@ -11,9 +11,11 @@ import {
   RouteComponentProps
 } from 'react-router-dom'
 import {Link} from 'react-router-dom'
-import CircleStory from "./CircleStory";
-import RectangleStory from "./RectangleStory";
-import ProjectsStory from "./ProjectsStory";
+// import CircleStory from "./CircleStory";
+// import RectangleStory from "./RectangleStory";
+// import ProjectsStory from "./ProjectsStory";
+// import CoverStory from "./CoverStory";
+// import BaseStory from "./BaseStory";
 
 const Title = (x: string) => (
   <div>
@@ -30,37 +32,59 @@ interface IMenuItemProps {
   route: string
 }
 const MenuItem: React.SFC<IMenuItemProps> = (props) => (
-  <ListItem button={true} divider={true}>
+  <ListItem key={props.name} button={true} divider={true}>
     <Link style={{textDecoration: "none", color: "white"}} to={props.route}><ListItemText primary={props.name}/></Link>
   </ListItem>
 );
 
-interface IMenuProps extends RouteComponentProps<any> {}
-const Menu: React.SFC<IMenuProps> = (props) => (
-  <div>
-    <Paper className="Page-menu" elevation={0} square={true}>
-      <List style={{padding: 0}} component="nav">
-        {MenuItem({name: "Circles", route: `${props.match.url}/circle`})}
-        {MenuItem({name: "Rectangles", route: `${props.match.url}/rect`})}
-      </List>
-    </Paper>
-  </div>
-);
+
+
+interface IStoryItem {
+  name: string,
+  title: string,
+  story: any
+}
 
 interface IBaseProps extends RouteComponentProps<any> {}
-const BasePage: React.SFC<IBaseProps> = (props) =>
-      <div>
-        <Paper className="Page" elevation={2}>
-          {Title("Projects")}
-          <div className={"Page-body"}>
-            {Menu({...props})}
-            <div className={"Page-story"}>
-              <Route path={`${props.match.url}/circle`} component={CircleStory}/>
-              <Route path={`${props.match.url}/rect`} component={RectangleStory}/>
-              <Route exact={true} path={`${props.match.url}`} component={ProjectsStory}/>
-            </div>
+abstract class BasePage extends React.Component<IBaseProps, {}> {
+  protected title: string = "Projects";
+  protected arr: IStoryItem[] = [
+  ];
+  public render() {
+    return (
+    <div>
+      <Paper className="Page" elevation={2}>
+        {Title(this.title)}
+        <div className={"Page-body"}>
+          {this.renderMenu()}
+          <div className={"Page-story"}>
+            {this.renderRoute()}
           </div>
+        </div>
+      </Paper>
+    </div>
+    )
+  }
+
+  protected renderRoute() {
+    return (
+      <div>
+        {this.arr.map((x) => <Route key={x.toString()} exact={true} path={`${this.props.match.url}${x.name}`} component={x.story}/>)}
+      </div>
+    );
+  }
+
+  protected renderMenu() {
+    return (
+      <div>
+        <Paper className="Page-menu" elevation={0} square={true}>
+          <List style={{padding: 0}} component="nav">
+            {this.arr.map((x) => MenuItem({name: x.title, route: `${this.props.match.url}${x.name}`}))}
+          </List>
         </Paper>
-      </div>;
+      </div>
+    );
+  }
+}
 
 export default BasePage;

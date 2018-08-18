@@ -6,7 +6,8 @@
         "import-sources-order": "any",
         "named-imports-order": "lowercase-last"
       }
-    ]
+    ],
+    "no-console" : false
   },
   "linterOptions": {
     "exclude": [

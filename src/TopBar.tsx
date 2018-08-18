@@ -13,22 +13,16 @@ class TopBar extends React.Component {
     return (
       <div>
         <AppBar position="static">
-          <Toolbar className={"Topbar-toolbar"}>
+          <Toolbar className="Topbar-toolbar">
             <Typography variant="title" color="inherit">
-              nedg.io
+              <Link style={{textDecoration: "none", color: "white"}} to="/">nedg.io</Link>
             </Typography>
             <div className={"Topbar-buttons"}>
-              <Button color="inherit" >
-                <Link style={{textDecoration: "none", color: "white"}} to="/">Home</Link>
-              </Button>
               <Button color="inherit">
                 <Link style={{textDecoration: "none", color: "white"}} to="/projects">Projects</Link>
               </Button>
               <Button color="inherit">
                 <Link style={{textDecoration: "none", color: "white"}} to="/photos">Photos</Link>
-              </Button>
-              <Button color="inherit">
-                <Link style={{textDecoration: "none", color: "white"}} to="/writing">Writing</Link>
               </Button>
               <Button color="inherit">
                 <Link style={{textDecoration: "none", color: "white"}} to="/about">About</Link>
