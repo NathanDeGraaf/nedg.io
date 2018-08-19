@@ -1,7 +1,8 @@
 .BaseStory-title {
-  padding: 10px;
-  text-align: center;
-  color: #000000de;
+  padding: 70px 10px 70px 30px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
 }
 
 .BaseStory-body {
@@ -11,9 +12,20 @@
   padding: 10px 15px 10px 15px;
 }
 
-.BaseStory-img {
+.BaseStory-imgContainer {
+  width: 50%;
   padding: 10px 15px 10px 15px;
+}
+
+.BaseStory-img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+
+.BaseStory-cover {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
 }

@@ -12,19 +12,25 @@ export function tx(text: string): JSX.Element {
 
 export function im(src: string): JSX.Element {
   return (
-    <img className="BaseStory-img" src={src} width="450" height="300" />
+    <div className="BaseStory-imgContainer">
+      <img className="BaseStory-img" width="450" height="300" src={src}  />
+    </div>
   )
 }
 
-export const titleElement = (title: string) =>
-  <Typography variant="display2" component="h1">
+export const titleElement = (title: string, img: string) =>
+  <div className="BaseStory-cover">
     <div className="BaseStory-title">
-      {title}
+      <Typography variant="display4" component="h1">
+        {title}
+      </Typography>
     </div>
-  </Typography>;
+    {im(img)}
+  </div>;
 
 abstract class BaseStory extends React.Component<{}, {}> {
   protected abstract title: string;
+  protected coverImgage: string;
   protected body: any;
   public render() {
     return (
@@ -32,7 +38,7 @@ abstract class BaseStory extends React.Component<{}, {}> {
         height: "100%",
         width: "800px"
       }}>
-        {/*{titleElement(this.title)}*/}
+        {titleElement(this.title, this.coverImgage)}
         <div className="BaseStory-body">
           {this.body}
         </div>
