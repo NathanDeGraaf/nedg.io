@@ -29,20 +29,26 @@ const Title = (x: string) => (
 
 interface IMenuItemProps {
   name: string,
-  route: string
+  route: string,
+  target?: string,
+  target_route?: string
 }
-const MenuItem: React.SFC<IMenuItemProps> = (props) => (
-  <ListItem key={props.name} button={true} divider={true}>
-    <Link style={{textDecoration: "none", color: "white"}} to={props.route}><ListItemText primary={props.name}/></Link>
-  </ListItem>
-);
+const MenuItem: React.SFC<IMenuItemProps> = (props) => {
+  const target = props.target;
+  const route = props.target_route || props.route;
+  return (<ListItem key={props.name} button={true} divider={true}>
+    <Link style={{textDecoration: "none", color: "white"}} to={route} target={target}><ListItemText primary={props.name}/></Link>
+  </ListItem>)
+};
 
 
 
 interface IStoryItem {
   name: string,
   title: string,
-  story: any
+  story: any,
+  target?: string,
+  route?: string
 }
 
 interface IBaseProps extends RouteComponentProps<any> {}
@@ -79,7 +85,12 @@ abstract class BasePage extends React.Component<IBaseProps, {}> {
       <div>
         <Paper className="Page-menu" elevation={0} square={true}>
           <List style={{padding: 0}} component="nav">
-            {this.arr.map((x) => MenuItem({name: x.title, route: `${this.props.match.url}${x.name}`}))}
+            {this.arr.map((x) => MenuItem({
+              name: x.title,
+              route: `${this.props.match.url}${x.name}`,
+              target: x.target,
+              target_route: x.route
+            }))}
           </List>
         </Paper>
       </div>

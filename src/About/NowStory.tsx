@@ -1,15 +1,6 @@
 import '../BasePage.css';
-import * as React from 'react';
-import Typography from '@material-ui/core/Typography';
+import {item} from "../BaseStory";
 import BaseStory from "../BaseStory";
-
-export function item(category: string, value: string): JSX.Element {
-  return (
-    <Typography className="BaseStory-tx" component="h1">
-      <b>{category}: </b> {value}
-    </Typography>
-  )
-}
 
 class NowStory extends BaseStory {
   protected title: string = "Now";
@@ -19,7 +10,7 @@ class NowStory extends BaseStory {
     item("Reading", "The Art of Learning by Joshua Waitzkin"),
     item("Building", "This webpage to experiment with developing in typescript + react"),
     item("Playing", "Stardew valley"),
-    item("Learning", "How to sport climb V8"),
+    item("Learning", "How to sport climb V8")
   ];
 }
 

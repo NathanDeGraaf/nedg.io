@@ -10,6 +10,14 @@ export function tx(text: string): JSX.Element {
   )
 }
 
+export function item(category: string, value: string): JSX.Element {
+  return (
+    <Typography className="BaseStory-tx" component="h1">
+      <b>{category}: </b> {value}
+    </Typography>
+  )
+}
+
 export function im(src: string): JSX.Element {
   return (
     <div className="BaseStory-imgContainer">

@@ -8,7 +8,7 @@ class AboutMePage extends BasePage {
   protected title: string = "About";
   protected arr = [
     { name: "", title: "-", story: CoverStory},
-    { name: "/resume", title: "Resume", story: ResumeStory},
+    { name: "/resume", title: "Resume", story: ResumeStory, target: "_blank", route: require('./resume.pdf')},
     { name: "/work", title: "Work Experience", story: WorkStory},
     { name: "/now", title: "Now", story: NowStory},
   ];
