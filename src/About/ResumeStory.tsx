@@ -1,9 +1,13 @@
 import '../BasePage.css';
-import IBaseStory from "../BaseStory";
+import {tx} from "../BaseStory";
+import BaseStory from "../BaseStory";
 
-class ResumeStory extends IBaseStory {
+class ResumeStory extends BaseStory {
   protected title: string = "Resume";
-  protected body: string = "tl;dr: I graduated from Iowa State University in 2018 with a bachelor of science in Computer Engineering and Mathematics.";
+  protected body: JSX.Element[] = [
+    tx("I'm a software engineer at Asana where I primarily work on the infrastructure and API for our mobile teams. " +
+      "This website was created to be a place to share my projects and experiences in an open source fashion.")
+  ];
 }
 
 export default ResumeStory;
