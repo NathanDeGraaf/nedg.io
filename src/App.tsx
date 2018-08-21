@@ -53,9 +53,9 @@ class App extends React.Component {
           <div>
             <TopBar/>
             <Route exact={true} path="/" component={Home}/>
-            <Route path="/projects" component={ProjectsPage}/>
-            <Route path="/about" component={AboutMePage}/>
-            <Route path="/photos" component={PhotosPage}/>
+            <Route path={ProjectsPage.route} component={ProjectsPage}/>
+            <Route path={AboutMePage.route} component={AboutMePage}/>
+            <Route path={PhotosPage.route} component={PhotosPage}/>
           </div>
         </Router>
       </DocumentTitle>

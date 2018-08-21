@@ -4,7 +4,6 @@ import BaseStory from "../BaseStory";
 
 class NowStory extends BaseStory {
   protected title: string = "Now";
-  protected coverImgage: string = require('./232620.png');
   protected body: JSX.Element[] = [
     item("Working", "Mobile Infrastructure team at Asana in San Francisco"),
     item("Reading", "The Art of Learning by Joshua Waitzkin"),

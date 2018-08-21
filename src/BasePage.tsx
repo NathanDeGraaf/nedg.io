@@ -17,11 +17,11 @@ import {Link} from 'react-router-dom'
 // import CoverStory from "./CoverStory";
 // import BaseStory from "./BaseStory";
 
-const Title = (x: string) => (
+const Title = (value: string, route: string) => (
   <div>
     <Paper className="Page-title" elevation={0} square={true}>
       <Typography className="Header" variant="title" component="h3">
-        {x}
+        <Link style={{textDecoration: "none"}} to={route}>{value}</Link>
       </Typography>
     </Paper>
   </div>
@@ -44,8 +44,8 @@ const MenuItem: React.SFC<IMenuItemProps> = (props) => {
 
 
 interface IStoryItem {
-  name: string,
-  title: string,
+  route_name: string,
+  title?: string,
   story: any,
   target?: string,
   route?: string
@@ -53,6 +53,7 @@ interface IStoryItem {
 
 interface IBaseProps extends RouteComponentProps<any> {}
 abstract class BasePage extends React.Component<IBaseProps, {}> {
+  public route: string;
   protected title: string = "Projects";
   protected arr: IStoryItem[] = [
   ];
@@ -60,7 +61,7 @@ abstract class BasePage extends React.Component<IBaseProps, {}> {
     return (
     <div>
       <Paper className="Page" elevation={2}>
-        {Title(this.title)}
+        {Title(this.title, this.route)}
         <div className={"Page-body"}>
           {this.renderMenu()}
           <div className={"Page-story"}>
@@ -75,7 +76,7 @@ abstract class BasePage extends React.Component<IBaseProps, {}> {
   protected renderRoute() {
     return (
       <div>
-        {this.arr.map((x) => <Route key={x.toString()} exact={true} path={`${this.props.match.url}${x.name}`} component={x.story}/>)}
+        {this.arr.map((x) => <Route key={x.toString()} exact={true} path={`${this.props.match.url}${x.route_name}`} component={x.story}/>)}
       </div>
     );
   }
@@ -85,12 +86,18 @@ abstract class BasePage extends React.Component<IBaseProps, {}> {
       <div>
         <Paper className="Page-menu" elevation={0} square={true}>
           <List style={{padding: 0}} component="nav">
-            {this.arr.map((x) => MenuItem({
-              name: x.title,
-              route: `${this.props.match.url}${x.name}`,
-              target: x.target,
-              target_route: x.route
-            }))}
+            {this.arr.map((x) => {
+              if(x.title === undefined) {
+                return;
+              } else {
+                return MenuItem({
+                  name: x.title,
+                  route: `${this.props.match.url}${x.route_name}`,
+                  target: x.target,
+                  target_route: x.route
+                })
+              }
+            })}
           </List>
         </Paper>
       </div>

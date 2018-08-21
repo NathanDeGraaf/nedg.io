@@ -1,8 +1,12 @@
 import '../BasePage.css';
-import IBaseStory from "../BaseStory";
+import {tx} from "../BaseStory";
+import BaseStory from "../BaseStory";
 
-class ProjectsStory extends IBaseStory {
-  protected title: string = "Some random projects";
+class ProjectsStory extends BaseStory {
+  protected title: string = "Projects";
+  protected body: JSX.Element[] = [
+    tx("These are some of the projects I've undertaken in my spare time. Drawing Circles is a good place to start.")
+  ];
 }
 
 export default ProjectsStory;

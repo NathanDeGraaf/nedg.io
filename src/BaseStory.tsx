@@ -19,11 +19,15 @@ export function item(category: string, value: string): JSX.Element {
 }
 
 export function im(src: string): JSX.Element {
-  return (
-    <div className="BaseStory-imgContainer">
-      <img className="BaseStory-img" width="450" height="300" src={src}  />
-    </div>
-  )
+  if(src !== undefined) {
+    return (
+      <div className="BaseStory-imgContainer">
+        <img className="BaseStory-img" width="450" height="300" src={src}  />
+      </div>
+    )
+  } else {
+    return <div/>
+  }
 }
 
 export const titleElement = (title: string, img: string) =>

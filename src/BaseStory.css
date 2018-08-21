@@ -1,5 +1,5 @@
 .BaseStory-title {
-  padding: 30px 10px 10px 10px;
+  padding: 30px 10px 10px 30px;
   display: inline-block;
   vertical-align: middle;
   /*background-color: blue;*/
@@ -28,7 +28,7 @@
 
 .BaseStory-cover {
   /*background-color: red;*/
-  height: 300px;
+  /*height: 300px;*/
   display: flex;
   justify-content: space-between;
   width: 100%;
