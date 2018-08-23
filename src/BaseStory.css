@@ -2,11 +2,19 @@
   padding: 30px 10px 10px 30px;
   display: inline-block;
   vertical-align: middle;
-  /*background-color: blue;*/
   width: 40%;
 }
 
+
+.BaseStory-content {
+  height: 100%;
+  width: 800px;
+  padding: 5px;
+}
+
 .BaseStory-body {
+  max-height: 729px;
+  overflow: auto;
 }
 
 .BaseStory-tx {
@@ -27,9 +35,26 @@
 }
 
 .BaseStory-cover {
-  /*background-color: red;*/
-  /*height: 300px;*/
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.PhotoStory-row {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.PhotoStory-imgContainer {
+}
+
+.PhotoStory-photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  height: auto;
 }

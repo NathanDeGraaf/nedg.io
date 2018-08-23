@@ -30,15 +30,21 @@ export function im(src: string): JSX.Element {
   }
 }
 
-export const titleElement = (title: string, img: string) =>
-  <div className="BaseStory-cover">
-    <div className="BaseStory-title">
-      <Typography variant="display4" component="h1">
-        {title}
-      </Typography>
-    </div>
-    {im(img)}
-  </div>;
+export const titleElement = (title: string, img: string) => {
+  if(title !== "") {
+    return (<div className="BaseStory-cover">
+      <div className="BaseStory-title">
+        <Typography variant="display4" component="h1">
+          {title}
+        </Typography>
+      </div>
+      {im(img)}
+    </div>);
+  } else {
+    return <div/>
+  }
+};
+
 
 abstract class BaseStory extends React.Component<{}, {}> {
   protected abstract title: string;
@@ -46,10 +52,7 @@ abstract class BaseStory extends React.Component<{}, {}> {
   protected body: any;
   public render() {
     return (
-      <div style={{
-        height: "100%",
-        width: "800px"
-      }}>
+      <div className="BaseStory-body">
         {titleElement(this.title, this.coverImgage)}
         <div className="BaseStory-body">
           {this.body}
