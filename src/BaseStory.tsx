@@ -30,7 +30,7 @@ export function im(src: string): JSX.Element {
   }
 }
 
-export const titleElement = (title: string, img: string) => {
+export const titleElement = (title: string) => {
   if(title !== "") {
     return (<div className="BaseStory-cover">
       <div className="BaseStory-title">
@@ -38,7 +38,6 @@ export const titleElement = (title: string, img: string) => {
           {title}
         </Typography>
       </div>
-      {im(img)}
     </div>);
   } else {
     return <div/>
@@ -48,12 +47,11 @@ export const titleElement = (title: string, img: string) => {
 
 abstract class BaseStory extends React.Component<{}, {}> {
   protected abstract title: string;
-  protected coverImgage: string;
   protected body: any;
   public render() {
     return (
       <div className="BaseStory-body">
-        {titleElement(this.title, this.coverImgage)}
+        {titleElement(this.title)}
         <div className="BaseStory-body">
           {this.body}
         </div>
