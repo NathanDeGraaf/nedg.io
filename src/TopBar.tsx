@@ -18,15 +18,15 @@ class TopBar extends React.Component {
               <Link style={{textDecoration: "none", color: "white"}} to="/">nedg.io</Link>
             </Typography>
             <div className={"Topbar-buttons"}>
-              <Button color="inherit">
-                <Link style={{textDecoration: "none", color: "white"}} to="/projects">Projects</Link>
-              </Button>
-              <Button color="inherit">
-                <Link style={{textDecoration: "none", color: "white"}} to="/photos">Photos</Link>
-              </Button>
-              <Button color="inherit">
-                <Link style={{textDecoration: "none", color: "white"}} to="/about">About</Link>
-              </Button>
+              <Link style={{textDecoration: "none", color: "white"}} to="/projects">
+                <Button color="inherit">Projects</Button>
+              </Link>
+              <Link style={{textDecoration: "none", color: "white"}} to="/photos">
+                <Button color="inherit">Photos</Button>
+              </Link>
+              <Link style={{textDecoration: "none", color: "white"}} to="/about">
+                <Button color="inherit">About</Button>
+              </Link>
             </div>
           </Toolbar>
         </AppBar>

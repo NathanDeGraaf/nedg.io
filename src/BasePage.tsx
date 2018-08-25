@@ -36,9 +36,16 @@ interface IMenuItemProps {
 const MenuItem: React.SFC<IMenuItemProps> = (props) => {
   const target = props.target;
   const route = props.target_route || props.route;
-  return (<ListItem key={props.name} button={true} divider={true}>
-    <Link style={{textDecoration: "none", color: "white"}} to={route} target={target}><ListItemText primary={props.name}/></Link>
-  </ListItem>)
+
+
+  return (
+    <Link style={{textDecoration: "none", color: "white"}} to={route} target={target}>
+      <ListItem key={props.name}
+                button={true}
+                divider={true}>
+        <ListItemText primary={props.name}/>
+      </ListItem>
+    </Link>)
 };
 
 
