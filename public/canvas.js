@@ -339,9 +339,9 @@ function resize() {
 
 
 // zoom in 10 times on mouse-click, this allows for demonstration on mobile devices
-canvas.addEventListener('mousedown',async  function(event) {
+canvas.addEventListener('mousedown',async function(event) {
 	if(inMiddleCircle()){
-		window.location = "https://www.nedg.io/about";
+		window.location = "http://www.nedg.io/about";
 		return;
 	}
 
@@ -362,7 +362,7 @@ canvas.addEventListener('mousedown',async  function(event) {
 		await sleep(1);
 		count++;
 	}
-});
+})
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
