@@ -1,7 +1,12 @@
-var colors = ["purple","orange","red","yellow"];
+var colors = [
+	"#be6e5c",
+  "#ce904c",
+	"#78ad45",
+	"#dcdb56"
+];
 
 var canvas = document.getElementById("canvas");
-canvas.style.backgroundColor = 'black';
+canvas.style.backgroundColor = '#222222';
 var width = window.innerWidth;
 var height = window.innerHeight;
 canvas.width = width;
@@ -255,7 +260,7 @@ function drawMyCircle(circle){
 			context.beginPath();
 			context.arc(x, y, r, 0, 7, false);
 			if(middleCircleHighlight) {
-                context.fillStyle = "white";
+                context.fillStyle = "#fefefe";
             } else {
                 context.fillStyle = color;
             }
@@ -337,11 +342,10 @@ function resize() {
 	draw();
 }
 
-
 // zoom in 10 times on mouse-click, this allows for demonstration on mobile devices
-canvas.addEventListener('mousedown',async function(event) {
+canvas.addEventListener('mousedown', async function(event) {
 	if(inMiddleCircle()){
-		window.location = "http://www.nedg.io/about";
+		window.location = "http://www.nedg.io/projects/circle";
 		return;
 	}
 
@@ -363,6 +367,7 @@ canvas.addEventListener('mousedown',async function(event) {
 		count++;
 	}
 })
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }

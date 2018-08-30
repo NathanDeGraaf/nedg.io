@@ -12,7 +12,7 @@ class WorkStory extends BaseStory {
       <a href={"https://github.com/NathanDeGraaf/nedg.io"}>github.com/NathanDeGraaf/nedg.io</a>
       {". Although disclaimer that the code you will find there is far from elegant, as this was written entirely over the course of a couple weeks while I listened to podcasts."}
     </Typography>),
-    tx("Last updated Aug 24, 2018")
+    tx("Last updated Aug 29, 2018")
   ];
 }
 
