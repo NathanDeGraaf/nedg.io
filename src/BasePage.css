@@ -1,6 +1,6 @@
 .Page {
   width: 1000px;
-  height: 800px;
+  height: 900px;
   margin: 50px auto;
   background-color: #ffffff;
 }
@@ -19,7 +19,7 @@
 
 .Page-menu {
   width: 200px;
-  height: 749px;
+  height: 849px;
   border-style: solid;
   border-color: #e1e1e1;
   border-width: 0 1px 0 0;

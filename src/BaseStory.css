@@ -1,5 +1,5 @@
 .BaseStory-title {
-  padding: 30px 10px 10px 30px;
+  padding: 0 20px 0 20px;
   display: inline-block;
   vertical-align: middle;
   width: 100%;
@@ -13,17 +13,35 @@
 }
 
 .BaseStory-body {
-  max-height: 729px;
+  max-height: 829px;
   overflow: auto;
+}
+
+.mylink {
+  text-decoration: underline;
+}
+
+.nolink {
+  text-decoration: none;
 }
 
 .BaseStory-tx {
   padding: 10px 15px 10px 15px;
 }
 
+.BaseStory-h1 {
+  padding: 15px 15px 0 15px;
+  display: block;
+  font-size: 1.17em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+
+}
+
 .BaseStory-imgContainer {
   /*width: 50%;*/
-  padding: 10px;
+  padding: 15px;
 }
 
 .BaseStory-img {

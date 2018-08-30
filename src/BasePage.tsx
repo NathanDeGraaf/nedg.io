@@ -6,16 +6,10 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import {
-  // BrowserRouter as Router,
   Route,
   RouteComponentProps
 } from 'react-router-dom'
 import {Link} from 'react-router-dom'
-// import CircleStory from "./CircleStory";
-// import RectangleStory from "./RectangleStory";
-// import ProjectsStory from "./ProjectsStory";
-// import CoverStory from "./CoverStory";
-// import BaseStory from "./BaseStory";
 
 const Title = (value: string, route: string) => (
   <div>
@@ -39,7 +33,7 @@ const MenuItem: React.SFC<IMenuItemProps> = (props) => {
 
 
   return (
-    <Link style={{textDecoration: "none", color: "white"}} to={route} target={target}>
+    <Link className={target ? "mylink" : "nolink"} to={route} target={target}>
       <ListItem key={props.name}
                 button={true}
                 divider={true}>
@@ -69,9 +63,9 @@ abstract class BasePage extends React.Component<IBaseProps, {}> {
     <div>
       <Paper className="Page" elevation={2}>
         {Title(this.title, this.route)}
-        <div className={"Page-body"}>
+        <div className="Page-body">
           {this.renderMenu()}
-          <div className={"Page-story"}>
+          <div className="Page-story">
             {this.renderRoute()}
           </div>
         </div>

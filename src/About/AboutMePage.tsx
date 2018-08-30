@@ -12,7 +12,7 @@ class AboutMePage extends BasePage {
     { route_name: "", story: CoverStory},
     { route_name: "/now", title: "Now", story: NowStory},
     { route_name: "/info", title: "This site", story: WorkStory},
-    { route_name: "/resume", title: "Resume", story: ResumeStory, target: "_blank", route: require('./resume.pdf')},
+    { route_name: "/resume", title: "↪ Resume", story: ResumeStory, target: "_blank", route: require('./resume.pdf')},
   ];
 }
 

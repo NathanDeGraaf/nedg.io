@@ -3,8 +3,8 @@ import './BasePage.css';
 
 class Circles extends React.Component {
   public render() {
-    // window.location.href = "http://www.nedg.io/circles.html";
-    window.location.href = "http://localhost:3000/circles.html";
+    window.location.replace("http://www.nedg.io/circles.html");
+    // window.location.href = "http://localhost:3000/circles.html";
     return (
 
       <div>

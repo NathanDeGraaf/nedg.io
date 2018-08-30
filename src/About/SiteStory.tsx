@@ -10,7 +10,7 @@ class WorkStory extends BaseStory {
     (<Typography className="BaseStory-tx" component="h1">
       {"This site was built using typescript plus react along with material-ui components: the open source git repo can be found at "}
       <a href={"https://github.com/NathanDeGraaf/nedg.io"}>github.com/NathanDeGraaf/nedg.io</a>
-      {". Although disclaimer that the code you will find there is far from elegant, as this was written entirely over the course of a couple weeks while I listened to podcasts."}
+      {". Although disclaimer that the code you will find there is far from elegant, as this was written entirely over the course of a couple weeks with a disregard for consistency or conventions."}
     </Typography>),
     tx("Last updated Aug 29, 2018")
   ];

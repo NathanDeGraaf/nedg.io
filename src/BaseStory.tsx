@@ -4,9 +4,17 @@ import './BaseStory.css';
 
 export function tx(text: string): JSX.Element {
   return (
-  <Typography className="BaseStory-tx" component="h1">
-    {text}
-  </Typography>
+    <Typography className="BaseStory-tx" component="h1">
+      {text}
+    </Typography>
+  )
+}
+
+export function h1(text: string): JSX.Element {
+  return (
+    <div className="BaseStory-h1">
+      {text}
+    </div>
   )
 }
 
@@ -34,7 +42,7 @@ export const titleElement = (title: string) => {
   if(title !== "") {
     return (<div className="BaseStory-cover">
       <div className="BaseStory-title">
-        <Typography variant="display4" component="h1">
+        <Typography variant="display3" component="h1">
           {title}
         </Typography>
       </div>
@@ -52,7 +60,7 @@ abstract class BaseStory extends React.Component<{}, {}> {
     return (
       <div className="BaseStory-body">
         {titleElement(this.title)}
-        <div className="BaseStory-body">
+        <div>
           {this.body}
         </div>
       </div>
