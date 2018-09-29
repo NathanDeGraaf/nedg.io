@@ -18,10 +18,11 @@ class App extends React.Component {
         <Router>
           <div>
             <TopBar/>
-            <Route exact={true} path="/" component={Circles}/>
-            <Route path={ProjectsPage.route} component={ProjectsPage}/>
-            <Route path={AboutMePage.route} component={AboutMePage}/>
-            <Route path={PhotosPage.route} component={PhotosPage}/>
+              <Route exact={true} path="/" component={AboutMePage}/>
+              <Route path={"/circles"} component={Circles}/>
+              <Route path={ProjectsPage.route} component={ProjectsPage}/>
+              <Route path={AboutMePage.route} component={AboutMePage}/>
+              <Route path={PhotosPage.route} component={PhotosPage}/>
           </div>
         </Router>
       </DocumentTitle>
