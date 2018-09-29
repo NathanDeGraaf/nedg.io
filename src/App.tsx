@@ -7,6 +7,7 @@ import {
   Route
 } from 'react-router-dom'
 import ProjectsPage from "./Projects/ProjectsPage";
+import HomePage from "./HomePage";
 import AboutMePage from "./About/AboutMePage";
 import PhotosPage from "./Photos/PhotosPage";
 import Circles from "./Circles";
@@ -18,7 +19,7 @@ class App extends React.Component {
         <Router>
           <div>
             <TopBar/>
-              <Route exact={true} path="/" component={AboutMePage}/>
+              <Route exact={true} path="/" component={HomePage}/>
               <Route path={"/circles"} component={Circles}/>
               <Route path={ProjectsPage.route} component={ProjectsPage}/>
               <Route path={AboutMePage.route} component={AboutMePage}/>
