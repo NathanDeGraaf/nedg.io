@@ -101,11 +101,7 @@ class CircleStory extends IBaseStory {
     tx("Look into inversion geometry as a way to generate tangent circles precisely"),
     tx("Mobile (iOs) support for viewing and interacting with JavaScript"),
     tx("Click and drag exploration of the canvas"),
-    tx("Generating high quality renderings of our circles"),
-
-
-
-
+    tx("Generating high quality renderings of our circles")
   ];
 }
 

@@ -37,7 +37,7 @@ const MenuItem: React.SFC<IMenuItemProps> = (props) => {
       <ListItem key={props.name}
                 button={true}
                 divider={true}>
-        <ListItemText primary={props.name}/>
+        <ListItemText style={{padding: "0"}} primary={props.name}/>
       </ListItem>
     </Link>)
 };
