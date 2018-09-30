@@ -1,8 +1,8 @@
 import BasePage from "../BasePage";
 import CircleStory from "./CircleStory";
-// import RectangleStory from "./RectangleStory";
 import ProjectsStory from "./ProjectsStory";
 import RectangleStory from "./RectangleStory";
+import ChessStory from "./ChessStory";
 
 class ProjectsPage extends BasePage {
   public static route = "/projects";
@@ -11,7 +11,7 @@ class ProjectsPage extends BasePage {
   protected arr = [
       { route_name: "/circle", title: "Drawing Circles",  story: CircleStory},
       { route_name: "/rrl", title: "Pattern Compression (REU)",  story: RectangleStory},
-    // { route_name: "/rect",  title: "Rectangle Research", story: RectangleStory},
+      { route_name: "/chess", title: "Chess Piece Classifier",  story: ChessStory},
     { route_name: "", story: ProjectsStory},
   ];
 }
