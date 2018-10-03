@@ -8,6 +8,13 @@ class CircleStory extends IBaseStory {
   protected title: string = "Drawing Circles";
   protected body: JSX.Element[] = [
     h1("Results"),
+    (<div>
+        <div className="PhotoStory-imgContainer">
+          <a href={'http://nedg.io/circles.html'} target={"_blank"}>
+            <img className="CircleStory-photo" src={require('./CircleImages/large_circles.png')}  />
+          </a>
+        </div>
+      </div>),
     (<Typography className="BaseStory-tx" component="h1">
       <a href={"http://www.nedg.io/circles.html"}>{"http://nedg.io/circles.html"}</a>
     </Typography>),

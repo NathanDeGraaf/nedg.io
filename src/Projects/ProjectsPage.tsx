@@ -10,7 +10,7 @@ class ProjectsPage extends BasePage {
   protected title: string = "Projects";
   protected arr = [
       { route_name: "/circle", title: "Drawing Circles",  story: CircleStory},
-      { route_name: "/rrl", title: "Pattern Compression (REU)",  story: RectangleStory},
+      { route_name: "/rrl", title: "Pattern Compression Algorithm (REU)",  story: RectangleStory},
       { route_name: "/chess", title: "Chess Piece Classifier",  story: ChessStory},
     { route_name: "", story: ProjectsStory},
   ];

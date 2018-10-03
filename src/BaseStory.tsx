@@ -26,11 +26,11 @@ export function item(category: string, value: string): JSX.Element {
   )
 }
 
-export function im(src: string): JSX.Element {
+export function im(src: string, className: string = "BaseStory-img"): JSX.Element {
   if(src !== undefined) {
     return (
       <div className="BaseStory-imgContainer">
-        <img className="BaseStory-img" width="450" height="300" src={src}  />
+        <img className={className} width="450" height="300" src={src}  />
       </div>
     )
   } else {
